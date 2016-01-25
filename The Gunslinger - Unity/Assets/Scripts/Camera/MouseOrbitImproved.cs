@@ -19,6 +19,9 @@ public class MouseOrbitImproved : MonoBehaviour {
 	
 	float x = 0.0f;
 	float y = 0.0f;
+
+
+	PointingCamera scrPIC;
 	
 	// Use this for initialization
 	void Start () 
@@ -34,6 +37,8 @@ public class MouseOrbitImproved : MonoBehaviour {
 		{
 			rigidbody.freezeRotation = true;
 		}
+
+		scrPIC = gameObject.GetComponent<PointingCamera>();
 	}
 	
 	void LateUpdate () 
@@ -60,6 +65,9 @@ public class MouseOrbitImproved : MonoBehaviour {
 			transform.rotation = rotation;
 			transform.position = position;
 		}
+
+		//GameObject gProta = GameObject.FindWithTag("Player");
+		//gProta.transform.rotation = Quaternion.identity;
 	}
 	
 	public static float ClampAngle(float angle, float min, float max)

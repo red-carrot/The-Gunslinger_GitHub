@@ -5,6 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(EnemigoMuerto))]
 
 public class EnemigoControl : MonoBehaviour 
 {

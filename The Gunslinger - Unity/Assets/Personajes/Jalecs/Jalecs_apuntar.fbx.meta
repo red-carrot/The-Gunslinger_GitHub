@@ -194,6 +194,7 @@ ModelImporter:
     4300012: H_DDS_LowRes
     7400000: GestoApuntar
     7400002: Apuntar
+    7400004: Take 001
     9500000: //RootNode
     13700000: H_DDS_LowRes
     13700002: l_L_eye
@@ -429,10 +430,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Apuntar
+      name: Take 001
       takeName: Take 001
-      firstFrame: 8
-      lastFrame: 9
+      firstFrame: 1
+      lastFrame: 65
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

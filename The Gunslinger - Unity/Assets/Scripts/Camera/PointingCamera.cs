@@ -4,14 +4,14 @@ using System.Collections;
 public class PointingCamera : MonoBehaviour 
 {
 	public Transform target = null;
-	public float veloc = 40.0f;
+	public float veloc = 80.0f;
 
-	Animator _anim;
-	float vertical;
+	Animator anim;
+	public float fVertical;
 
 	void Start()
 	{
-		_anim = gameObject.GetComponent<Animator> ();
+		anim = GameObject.FindWithTag("Player").GetComponent<Animator>();
 	}
 
 	void Update ()
@@ -31,9 +31,6 @@ public class PointingCamera : MonoBehaviour
 		transform.position = target.position;
 		transform.rotation = target.rotation;
 
-		// ---------- RotaCION y
-
-		_anim.SetFloat ("Vertical", vertical);
 
 	}
 }

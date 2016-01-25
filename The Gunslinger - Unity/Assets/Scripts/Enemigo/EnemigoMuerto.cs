@@ -9,6 +9,7 @@ public class EnemigoMuerto : MonoBehaviour
 	NavMeshAgent agente;
 	PlayerVida PV;
 	public GameObject sMuerte;
+	Animator _anim;
 
 	#endregion
 
@@ -27,6 +28,9 @@ public class EnemigoMuerto : MonoBehaviour
 		agente.enabled=false;
 
 		sMuerte.SetActive (true);
+
+		_anim = GetComponent<Animator>();
+		_anim.enabled = false;
 	}
 
 	#endregion

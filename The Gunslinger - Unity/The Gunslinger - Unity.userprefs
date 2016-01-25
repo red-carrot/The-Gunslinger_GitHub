@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camera\MouseOrbitImproved.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Boss\SylviaControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Camera\MouseOrbitImproved.cs" Line="25" Column="3" />
-      <File FileName="Assets\Scripts\Camera\PointingCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\ThirdPersonCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\ThirdPersonUserControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerController.cs" Line="104" Column="17" />
+      <File FileName="Assets\Scripts\Boss\SylviaControl.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\Enemigo\EnemigoControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

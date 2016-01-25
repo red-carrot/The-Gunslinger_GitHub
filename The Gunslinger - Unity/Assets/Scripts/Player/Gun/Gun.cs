@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
 {
 	public Transform punta;
 	public Proyectil proyectil;
-	public float msEntreDisparo = 100;
+	public float msEntreDisparo = 200;
 	public float velBala = 35;
 
 	float nextShootTime;

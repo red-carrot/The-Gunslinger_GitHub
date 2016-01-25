@@ -94,11 +94,14 @@ public class PlayerController : MonoBehaviour
 		
 		if (Input.GetButton("Aim"))
 		{
-			if (Input.GetButton("Fire"))
+			if (Input.GetButtonDown("Fire"))
 			{
 				_gunControl.Shoot();
 				print("PIUMPIM!!!");
 			}
+
+			_anim.SetFloat("Forward", _forward);
+			_forward = 0;
 
 			_aim=true;
 			_fAim=1.0f;
@@ -106,12 +109,15 @@ public class PlayerController : MonoBehaviour
 			//_cAim=true;
 
 			print("Aim ON!!");
-			//_Aim(0.1f);
-
-
 		}
 		else if (Input.GetButtonUp("Aim"))
 		{
+			Vector3 euly = gameObject.transform.rotation.eulerAngles;
+			euly.x=0;
+			euly.y=0;
+
+			gameObject.transform.rotation = Quaternion.LookRotation(euly, Vector3.up);
+
 			_aim=false;
 
 			//_cAim=true;

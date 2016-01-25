@@ -96,6 +96,8 @@
      <Compile Include="Assets\Image Effects\ImageEffects\SunShaftsEditor.cs" />
      <Compile Include="Assets\Image Effects\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Image Effects\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+     <Compile Include="Assets\Scripts\Boss\SylviaControl.cs" />
+     <Compile Include="Assets\Scripts\Boss\SylviaMuerto.cs" />
      <Compile Include="Assets\Scripts\Camera\CambioCamara.cs" />
      <Compile Include="Assets\Scripts\Camera\MouseOrbitImproved.cs" />
      <Compile Include="Assets\Scripts\Camera\PointingCamera.cs" />
@@ -117,6 +119,7 @@
      <Compile Include="Assets\Scripts\Player\Gun\Downloaded\Shoot.cs" />
      <Compile Include="Assets\Scripts\Player\Gun\Gun.cs" />
      <Compile Include="Assets\Scripts\Player\Gun\GunControl.cs" />
+     <Compile Include="Assets\Scripts\Player\Gun\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Player\Gun\Proyectil.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerVida.cs" />
