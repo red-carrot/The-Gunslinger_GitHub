@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SylviaMuerto : MonoBehaviour {
+public class SylviaMuerto : MonoBehaviour 
+{
+	Animator _anim;
+	NavMeshAgent _agent;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Start ()
+	{
+		_agent = GetComponent<NavMeshAgent>();
+		_anim = GetComponent<Animator>();
+
+		_agent.enabled = false;
+		_anim.enabled = false;
 	}
 }

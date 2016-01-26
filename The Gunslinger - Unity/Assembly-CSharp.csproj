@@ -126,7 +126,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerVida.cs" />
      <Compile Include="Assets\Scripts\Player\ThirdPersonCharacter.cs" />
      <Compile Include="Assets\Scripts\Player\ThirdPersonUserControl.cs" />
-     <Compile Include="Assets\Scripts\System\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\System\MovieTexture.cs" />
+     <Compile Include="Assets\Scripts\System\PlayMovieOnSpace.cs" />
      <None Include="Assets\Image Effects\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Image Effects\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

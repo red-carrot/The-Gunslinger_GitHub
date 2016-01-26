@@ -24,6 +24,9 @@ public class EnemigoControl : MonoBehaviour
 
 	public GameObject sInsulto;
 
+	// Quitar vida
+	PlayerVida pPv;
+
 	#endregion
 
 
@@ -37,6 +40,9 @@ public class EnemigoControl : MonoBehaviour
 		death = false;
 
 		sInsulto.SetActive (false);
+
+		// Vida
+		pPv = GameObject.FindWithTag("Player").GetComponent<PlayerVida>();
 	}
 
 	void FixedUpdate()
@@ -76,6 +82,14 @@ public class EnemigoControl : MonoBehaviour
 		if (coli.gameObject.tag == "bala") 
 		{
 			gameObject.GetComponent<EnemigoMuerto>().enabled = true;
+		}
+	}
+
+	void OnTriggerStay (Collider coli)
+	{
+		if (coli.gameObject.tag == "Player")
+		{
+			pPv.QuitarVida(2);
 		}
 	}
 

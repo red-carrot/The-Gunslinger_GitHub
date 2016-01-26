@@ -12,12 +12,14 @@ public class SylviaControl : MonoBehaviour
 {
 	#region Variables
 
-	NavMeshAgent huir;
+	// Huir
 
-	GameObject gHuir;
+	NavMeshAgent navHuir;
+	GameObject objetivo;
+	GameObject _prota;
 
 	public float DistanciaMirar = 50.0f;
-	public float DistanciaHuir = 25.0f;
+	public float DistanciaHuir = 100000.0f;
 	public float DistanciaGritar = 15.0f;
 
 	// Animaciones
@@ -37,9 +39,10 @@ public class SylviaControl : MonoBehaviour
 	void Start()
 	{
 		// Huir
-		huir = gameObject.GetComponent<NavMeshAgent>();
+		navHuir = gameObject.GetComponent<NavMeshAgent>();
+		_prota = GameObject.FindWithTag ("Player");
+		objetivo = GameObject.Find ("ObjetivoSylvia");
 
-		gHuir = GameObject.FindWithTag("Player");
 		bHuir = false;
 
 		// Animaciones
@@ -55,30 +58,31 @@ public class SylviaControl : MonoBehaviour
 		// Definir las variables de la animacion
 
 		_anim.SetBool("huir", bHuir);
+		_anim.SetBool("gritar", bGritar);
 
 		// Huir
-		float fDistanciaConProta;
+		float fDistanciaObjetivo;
+		float fDistanciaProta;
 
-		fDistanciaConProta = Vector3.Distance(gameObject.transform.position, gHuir.transform.position);
+		fDistanciaObjetivo = Vector3.Distance(gameObject.transform.position, objetivo.transform.position);
+		fDistanciaProta = Vector3.Distance(gameObject.transform.position, _prota.transform.position);
 
-		if (fDistanciaConProta < DistanciaMirar)
+
+		if (fDistanciaObjetivo < DistanciaHuir)
 		{
-			gameObject.transform.LookAt (gHuir.transform.position);
-		}
-		if (fDistanciaConProta < DistanciaHuir)
-		{
-			huir.SetDestination(gHuir.transform.position);
-			print("Te sigo (L)");
+			navHuir.SetDestination (objetivo.transform.position);
 			bHuir = true;
+			print("a k no m pillaaaAsSs ¡ ¡");
 
-			_anim.SetBool ("gritar", bGritar);
-
-			if (fDistanciaConProta < DistanciaGritar)
+			if (fDistanciaProta < DistanciaGritar)
 			{
 				bGritar = true;
+				gameObject.transform.LookAt (_prota.transform.position);
+				navHuir.SetDestination (gameObject.transform.position);
 			}
-			else{
-				bGritar=false;
+			else
+			{
+				bGritar = false;
 			}
 		}
 		else
@@ -92,11 +96,11 @@ public class SylviaControl : MonoBehaviour
 
 	#region Colisiones
 
-	void OnTriggerStay (Collider coli)
+	void OnTriggerEnter(Collider coli)
 	{
 		if (coli.gameObject.tag == "Player") 
 		{
-			PV.QuitarVida();
+			PV.QuitarVida(3);
 		}
 	}
 

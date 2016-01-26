@@ -16,7 +16,7 @@ public class PlayerVida : MonoBehaviour
 	{
 		if (coli.gameObject.tag == "Vida")
 		{
-			AñadirVida();
+			AñadirVida(1);
 		}
 
 		if (Health > 100)
@@ -41,14 +41,16 @@ public class PlayerVida : MonoBehaviour
 
 	#region Funciones para añadir o quitar vida
 
-	public void QuitarVida()
+	public void QuitarVida(int pX)
 	{
-		Health -= 2;
+		Health -= pX;
+		print("Rolando has " + Health + " of vida");
 	}
 
-	public void AñadirVida()
+	public void AñadirVida(int pV)
 	{
-		Health += 1;
+		Health += pV;
+		print("Rolando has " + Health + " of vida");
 	}
 
 	#endregion

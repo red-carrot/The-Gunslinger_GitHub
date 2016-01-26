@@ -10,7 +10,7 @@ public class SylviaVida : MonoBehaviour
 
 	void Start ()
 	{
-		Health = 50;
+		Health = 1000;
 		sC = GetComponent<SylviaControl> ();
 		sM = GetComponent<SylviaMuerto> ();
 		bMuerte = false;
@@ -25,19 +25,40 @@ public class SylviaVida : MonoBehaviour
 		{
 			bMuerte = true;
 		}
+
+		if (Health > 2000)
+		{
+			Health = 2000;
+		}
 	}
 
 	void OnCollisionEnter (Collision coli)
 	{
 		if (coli.gameObject.tag == "bala") 
 		{
-			Daño();
+			Daño(150);
+		}
+
+		if (coli.gameObject.tag == "Enemigo")
+		{
+			Vida(200);
 		}
 	}
 
-	void Daño ()
+	#region Funciones de vida
+
+	public void Daño (int pX)
 	{
-		Health -= 150;
-		Debug.Log (Health);
+		Health -= pX;
+		print("Sylvia has " + Health + " of vida");
 	}
+
+	public void Vida (int pV)
+	{
+		Health += pV;
+		print("Sylvia has " + Health + " of vida");
+	}
+
+	#endregion
+
 }
