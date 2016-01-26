@@ -98,6 +98,7 @@
      <Compile Include="Assets\Image Effects\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
      <Compile Include="Assets\Scripts\Boss\SylviaControl.cs" />
      <Compile Include="Assets\Scripts\Boss\SylviaMuerto.cs" />
+     <Compile Include="Assets\Scripts\Boss\SylviaVida.cs" />
      <Compile Include="Assets\Scripts\Camera\CambioCamara.cs" />
      <Compile Include="Assets\Scripts\Camera\MouseOrbitImproved.cs" />
      <Compile Include="Assets\Scripts\Camera\PointingCamera.cs" />

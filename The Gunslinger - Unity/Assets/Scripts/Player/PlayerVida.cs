@@ -14,15 +14,9 @@ public class PlayerVida : MonoBehaviour
 
 	void OnTriggerStay (Collider coli)
 	{
-		if (coli.gameObject.tag == "Enemigo")
-		{
-			Health -= 2;
-			print("T ago dano nen");
-		}
-
 		if (coli.gameObject.tag == "Vida")
 		{
-			Health += 1;
+			AñadirVida();
 		}
 
 		if (Health > 100)
@@ -44,4 +38,18 @@ public class PlayerVida : MonoBehaviour
 			HealthBar.value = Health;
 		}
 	}
+
+	#region Funciones para añadir o quitar vida
+
+	public void QuitarVida()
+	{
+		Health -= 2;
+	}
+
+	public void AñadirVida()
+	{
+		Health += 1;
+	}
+
+	#endregion
 }

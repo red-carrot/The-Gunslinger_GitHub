@@ -6,6 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(SylviaMuerto))]
+[RequireComponent(typeof(SylviaVida))]
 
 public class SylviaControl : MonoBehaviour 
 {
@@ -15,14 +16,18 @@ public class SylviaControl : MonoBehaviour
 
 	GameObject gHuir;
 
-	public float DistanciaMirar;
-	public float DistanciaHuir;
-	public float DistanciaGritar;
+	public float DistanciaMirar = 50.0f;
+	public float DistanciaHuir = 25.0f;
+	public float DistanciaGritar = 15.0f;
 
 	// Animaciones
 	Animator _anim;
 	bool bHuir;
 	bool bGritar;
+
+	// Quitar vida
+	
+	PlayerVida PV;
 
 	#endregion
 
@@ -40,6 +45,9 @@ public class SylviaControl : MonoBehaviour
 		// Animaciones
 
 		_anim = GetComponent<Animator>();
+
+		// Quitar vida
+		PV = GameObject.FindWithTag ("Player").GetComponent<PlayerVida> ();
 	}
 
 	void Update()
@@ -83,6 +91,14 @@ public class SylviaControl : MonoBehaviour
 
 
 	#region Colisiones
+
+	void OnTriggerStay (Collider coli)
+	{
+		if (coli.gameObject.tag == "Player") 
+		{
+			PV.QuitarVida();
+		}
+	}
 
 	#endregion
 }
