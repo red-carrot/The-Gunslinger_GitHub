@@ -3,5 +3,8 @@ using System.Collections;
 
 public class MovieTexture : MonoBehaviour 
 {
-	((MovieTexture)GetComponent<Renderer>().material.mainTexture).Play();
+	void Start ()
+	{
+		((MovieTexture)GetComponent<Renderer>().material.mainTexture).Play();
+	}
 }

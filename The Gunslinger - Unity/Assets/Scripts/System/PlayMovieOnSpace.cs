@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayMovieOnSpace : MonoBehaviour 
 {
-	void Update () 
+	/*void Update () 
 	{
 		if (Input.GetButtonDown ("Jump")) 
 		{
@@ -17,5 +17,5 @@ public class PlayMovieOnSpace : MonoBehaviour
 				movie.Play();
 			}
 		}
-	}
+	}*/
 }
